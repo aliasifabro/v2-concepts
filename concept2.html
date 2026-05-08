@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<title>V2 Services LTD | Plumbing &amp; Heating Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .shadow-level-1 { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06); }
+        .shadow-level-2 { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); }
+        .orange-glow:focus-within { box-shadow: 0 0 0 2px rgba(242, 101, 34, 0.2); }
+        section { scroll-margin-top: 88px; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tab-panel {
+            display: none;
+        }
+        .tab-panel.is-active {
+            display: block;
+        }
+        .tab-button.is-active {
+            background: #f26522;
+            color: #ffffff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .footer-readable {
+            color: #f0f1f2;
+        }
+        .footer-muted {
+            color: #d7d9dc;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    
+        img, input, select, textarea, button, a { max-width: 100%; }
+         (max-width: 640px) {
+            .font-display-lg, .font-h1 { font-size: 34px !important; line-height: 1.12 !important; }
+            .font-headline-md, .font-h2 { font-size: 28px !important; line-height: 1.2 !important; }
+            section { overflow-x: clip; }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed-dim": "#adc7ff",
+                        "tertiary-container": "#4b8fff",
+                        "surface": "#f8f9fa",
+                        "on-tertiary-container": "#00285c",
+                        "surface-container-high": "#e7e8e9",
+                        "primary-container": "#f26522",
+                        "on-surface-variant": "#594138",
+                        "surface-dim": "#d9dadb",
+                        "secondary-container": "#dde0e6",
+                        "on-tertiary-fixed": "#001a41",
+                        "surface-tint": "#a63b00",
+                        "on-surface": "#191c1d",
+                        "primary-fixed": "#ffdbce",
+                        "on-background": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed": "#d8e2ff",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#edeeef",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb599",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary": "#a63b00",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#005bc0",
+                        "secondary-fixed-dim": "#c3c7cd",
+                        "on-primary-container": "#4f1800",
+                        "outline-variant": "#e1bfb3",
+                        "secondary-fixed": "#e0e2e9",
+                        "background": "#f8f9fa",
+                        "primary-fixed-dim": "#ffb599",
+                        "on-secondary-fixed": "#181c21",
+                        "on-secondary-container": "#5f6368",
+                        "on-primary-fixed-variant": "#7f2b00",
+                        "inverse-surface": "#2e3132",
+                        "error": "#ba1a1a",
+                        "outline": "#8d7166",
+                        "surface-variant": "#e1e3e4",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#43474c",
+                        "secondary": "#5b5f64",
+                        "on-tertiary-fixed-variant": "#004493",
+                        "surface-bright": "#f8f9fa",
+                        "on-primary-fixed": "#370e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "section-padding": "80px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "headline-sm": ["Montserrat"],
+                        "label-sm": ["Inter"],
+                        "headline-md": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-50 bg-surface-container-lowest dark:bg-surface-dim border-b border-outline-variant dark:border-outline shadow-sm">
+<nav class="flex justify-between items-center px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="V2 Services LTD logo" class="h-10 w-auto" src="v2-logo.svg"/>
+<span class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed">V2 Services LTD</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#services">Services</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 hover:scale-105 transition-all" href="#service-tabs">Tabs</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 hover:scale-105 transition-all" href="#pricing">Plans</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 hover:scale-105 transition-all" href="#reviews">Reviews</a>
+<a class="text-secondary dark:text-secondary-fixed hover:text-primary transition-colors font-body-md text-body-md hover:opacity-90 hover:scale-105 transition-all" href="#contact">Contact</a>
+</div>
+<a class="bg-primary-container text-on-primary px-6 py-2 rounded-lg font-label-bold hover:opacity-90 hover:scale-105 transition-all active:scale-95 duration-150 shadow-level-2" href="#contact">
+                Request Quote
+            </a>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative bg-surface-container-low py-section-padding overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid md:grid-cols-2 gap-12 items-center">
+<div class="relative z-10">
+<div class="inline-flex items-center gap-2 bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full mb-6">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-bold text-label-sm uppercase tracking-wider">Gas Safe Registered Engineers</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-inverse-surface mb-6 leading-tight">
+                        Reliable Plumbing &amp; Heating Solutions in the UK
+                    </h1>
+<p class="font-body-lg text-body-lg text-secondary mb-8 max-w-lg">
+                        Expert installations, rapid emergency repairs, and smart heating upgrades. Quality craftsmanship you can trust for your home and business.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<a class="bg-primary-container text-on-primary px-8 py-4 rounded-lg font-label-bold shadow-level-2 hover:opacity-90 transition-all flex items-center gap-2" href="#contact">
+                            Request a Quote
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="bg-inverse-surface text-on-primary px-8 py-4 rounded-lg font-label-bold hover:opacity-90 transition-all flex items-center gap-2" href="tel:07950285553">
+<span class="material-symbols-outlined">call</span>
+                            Call Now
+                        </a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-xl overflow-hidden shadow-level-2 relative z-10 border-4 border-surface-container-lowest">
+<img alt="Plumber at work" class="w-full h-full object-cover" data-alt="A professional UK plumber in a clean, navy blue uniform and protective gloves working on a complex arrangement of copper heating pipes in a brightly lit modern utility room. The lighting is soft and natural, emphasizing the precision and craftsmanship of the work. The overall aesthetic is professional, clean, and reliable, using a color palette of metallic copper, deep navy, and crisp white." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCudKLBOVeAQUitlqopewkfci23aR9cJQ5izj_iqBkDndX2K7Bh-EF9CXpr4zUXRfjhUeoP8RcrkwZdQVp_zc48QlWFsEJJwhJ4R_qOZ8jTh7uvRI6sYNLyBgIAptwzq8V6ITCzj08iRyb5olTDez8fIz-6ISA3xKQsFyt-SRxUtZH-K8Z1uu618MJv4z6HxFn2U-cry147xTzSF12k51_jvJhTJz1KSblTdiSvZX4U6jKZqx4XJU_h25jVdqReEQEz2oYpAlkJiQ"/>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-primary-container/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-64 h-64 bg-tertiary/5 rounded-full blur-3xl"></div>
+</div>
+</div>
+</section>
+<!-- Services Bento Section -->
+<section id="services" class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-inverse-surface mb-4">Our Professional Services</h2>
+<p class="font-body-md text-body-md text-secondary max-w-2xl mx-auto">From emergency call-outs to full heating system designs, we provide comprehensive solutions for every UK property.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Boiler Installations -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-level-1 hover:shadow-level-2 transition-all group">
+<div class="w-14 h-14 bg-primary-fixed rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">heat_pump</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-inverse-surface mb-3">Boiler Installations</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Expert installation of energy-efficient A-rated boilers with up to 12-year warranties.</p>
+<a class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="#contact">
+                            Learn more <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- Emergency Repairs -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-level-1 hover:shadow-level-2 transition-all group">
+<div class="w-14 h-14 bg-error-container rounded-lg flex items-center justify-center text-error mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">emergency_home</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-inverse-surface mb-3">Emergency Repairs</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Rapid response for leaks, bursts, and heating failures. Available 24/7 across the UK.</p>
+<a class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="#contact">
+                            Learn more <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- Smart Heating -->
+<div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-level-1 hover:shadow-level-2 transition-all group">
+<div class="w-14 h-14 bg-tertiary-fixed rounded-lg flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[32px]">nest_thermostat_gen_3</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-inverse-surface mb-3">Smart Heating</h3>
+<p class="font-body-md text-body-md text-secondary mb-6">Take control of your energy bills with Nest, Hive, and Tado smart control integrations.</p>
+<a class="text-primary font-label-bold flex items-center gap-2 group-hover:gap-4 transition-all" href="#contact">
+                            Learn more <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Trust Badges -->
+<section class="py-section-padding bg-inverse-surface text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="md:w-1/2">
+<h2 class="font-headline-md text-headline-md mb-6">Why Choose V2 Services LTD?</h2>
+<p class="font-body-lg text-body-lg text-surface-container-highest/80 mb-8">We pride ourselves on punctuality, transparency, and the highest standards of safety. Every job is handled by certified professionals.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary">check</span>
+</div>
+<div>
+<h4 class="font-label-bold text-body-md">Fully Insured &amp; Accredited</h4>
+<p class="text-surface-container-highest/60 text-label-sm">Peace of mind for every residential and commercial project.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="bg-primary-container p-2 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-on-primary">check</span>
+</div>
+<div>
+<h4 class="font-label-bold text-body-md">No Hidden Call-out Fees</h4>
+<p class="text-surface-container-highest/60 text-label-sm">Transparent pricing provided before we start any work.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-lowest/5 p-6 rounded-xl border border-white/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-lowest/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary-container text-[32px]">verified_user</span>
+</div>
+<span class="font-label-bold">Gas Safe Registered</span>
+</div>
+<div class="bg-surface-container-lowest/5 p-6 rounded-xl border border-white/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-lowest/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary-container text-[32px]">support_agent</span>
+</div>
+<span class="font-label-bold">24/7 Emergency Support</span>
+</div>
+<div class="bg-surface-container-lowest/5 p-6 rounded-xl border border-white/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-lowest/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary-container text-[32px]">workspace_premium</span>
+</div>
+<span class="font-label-bold">12-Month Guarantee</span>
+</div>
+<div class="bg-surface-container-lowest/5 p-6 rounded-xl border border-white/10 flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-lowest/10 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-primary-container text-[32px]">schedule</span>
+</div>
+<span class="font-label-bold">Punctual &amp; Professional</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section id="reviews" class="py-section-padding bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-inverse-surface mb-4">What Our Clients Say</h2>
+<div class="flex justify-center gap-1 text-primary">
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+<span class="material-symbols-outlined" data-weight="fill">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-level-1 relative">
+<span class="material-symbols-outlined absolute top-6 right-8 text-primary/10 text-[64px]">format_quote</span>
+<p class="font-body-md text-body-md text-secondary italic mb-6 relative z-10">
+                            "Excellent service! Our boiler broke down in the middle of winter, and V2 Services LTD had an engineer out within 2 hours. Highly professional and very clean work."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full overflow-hidden">
+<img alt="James Wilson" class="w-full h-full object-cover" data-alt="A portrait of a middle-aged British man with a friendly expression, set against a blurred outdoor background of a residential London street. The photo uses soft natural lighting and a realistic, documentary-style aesthetic that emphasizes authenticity and trust. The overall tone is bright and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlD-kC2ReeV3bJxNYAOkRdWr-1SZRZpm6WrMpZ--aGVJ7UeCGH6fYXwgTS1jZiVfvURc15KxB7Vk4UqATo99ZZisA2OQvKimu8_r1iOOe1rdlPT-9yT_kgJcl2Bp_AcvlL1Tf2R91GFMhHniAb0rtSyw3tEO_UJs_VYrrWqvyhoelYx-uMbP5h4TBbsTT4W06wpJup-LiO5SEJ19W30jtCodEzWX0TEsJxhzXbw4fTHSWxyVmCIciJngCZ1bgH2nvqd6-86-ez7w"/>
+</div>
+<div>
+<h5 class="font-label-bold text-inverse-surface">James Wilson</h5>
+<p class="text-label-sm text-secondary">Manchester</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-level-1 relative">
+<span class="material-symbols-outlined absolute top-6 right-8 text-primary/10 text-[64px]">format_quote</span>
+<p class="font-body-md text-body-md text-secondary italic mb-6 relative z-10">
+                            "Had a smart heating system installed across my property. The team explained everything clearly and the integration with my phone was seamless. Brilliant."
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full overflow-hidden">
+<img alt="Sarah Thompson" class="w-full h-full object-cover" data-alt="A portrait of a young professional British woman with a warm, confident smile, photographed in a well-lit modern home interior. The lighting is high-key and clean, suggesting a modern and upscale environment. The aesthetic is bright and clear, reflecting a high-quality lifestyle and professional satisfaction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNk8ZyXJf3Kyc8yrlyo7TIb2SMArlnQBpBPQzeS4qEDrvvl2IMB7getba8icKnlhN4CBMVa-pPl_JjwQwaTgzwmplqXmgv2KS2LRgLyZit-qyTuczzIbUppJyBoUmKfAmG_WdKUi3Q6ol7tGk_BJybaxv3B7fLt3Rq02dytaLjl6XP7a4CiT3ZkdayzxlCK9TfuysjRBlLe1DNFwORUZmdHiNRkkfGZf7ldi8E3eIAD30bfvOJP29CoAX6hicAnNyJU-QPYLMGA"/>
+</div>
+<div>
+<h5 class="font-label-bold text-inverse-surface">Sarah Thompson</h5>
+<p class="text-label-sm text-secondary">Birmingham</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-level-1 relative">
+<span class="material-symbols-outlined absolute top-6 right-8 text-primary/10 text-[64px]">format_quote</span>
+<p class="font-body-md text-body-md text-secondary italic mb-6 relative z-10">
+                            "The best plumbing company we've used for our rental portfolio. Reliable, fast, and they always provide detailed reports for our records. Recommended!"
+                        </p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-secondary-container rounded-full overflow-hidden">
+<img alt="David Fletcher" class="w-full h-full object-cover" data-alt="A portrait of an older professional man with silver hair and a thoughtful, trustworthy gaze. He is dressed in a smart-casual blazer, and the background is a soft-focus urban office setting. The lighting is sophisticated and warm, conveying years of professional experience and a standard of high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIJ24Aa3LgmMvIjgFf0lQJvZRTTSSp5-9--qvCTTO8KjBzEFK4kKKbOeMRTKzytmoOQTnscfVHp55OJ-D1EJ4RlpMaBdE4HYYLcph2bSVK8fi52AdNc7m3V_69gV2cBOwykzRG6kYfnA6raPmNw7Q4LBMYW0SYcCSCKAIfPtw6cRgPB6qXKexJ-EcMS9weqgM6hJAaaoOzrra-7fJPrcLYFYGlAXeRvaRfkQVSRzARwyLvczQu8QKvBstq_t-BoudKVVAD4CKmRA"/>
+</div>
+<div>
+<h5 class="font-label-bold text-inverse-surface">David Fletcher</h5>
+<p class="text-label-sm text-secondary">London</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Tabs -->
+<section id="service-tabs" class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="text-center mb-10">
+<span class="font-label-bold text-primary uppercase tracking-widest">Service tabs</span>
+<h2 class="font-headline-md text-headline-md mt-3 mb-4">Find the right team for the job</h2>
+<p class="font-body-md text-secondary max-w-2xl mx-auto">A simple tab-style route for customers comparing bathroom renovation work against everyday plumbing and heating jobs.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-3 mb-10">
+<button class="tab-button is-active px-6 py-3 rounded-lg font-label-bold border border-outline-variant transition-all" data-tab-target="bathroom-concept3" type="button">Bathroom Renovations</button>
+<button class="tab-button bg-surface-container-lowest text-primary px-6 py-3 rounded-lg font-label-bold border border-outline-variant hover:bg-primary-fixed transition-all" data-tab-target="general-concept3" type="button">General Plumbing</button>
+</div>
+<div class="max-w-3xl mx-auto">
+<div id="bathroom-concept3" class="tab-panel is-active bg-surface-container-lowest rounded-xl shadow-level-2 overflow-hidden">
+<div class="h-44 bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[72px]">bathtub</span>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-3">Bathroom Renovations</h3>
+<p class="text-secondary mb-6">New suites, wet areas, shower replacements, heated towel rails, and tidy first-fix plumbing for refurbishments.</p>
+<a class="inline-flex bg-primary-container text-on-primary px-6 py-3 rounded-lg font-label-bold" href="#contact">Enquire About Bathrooms</a>
+</div>
+</div>
+<div id="general-concept3" class="tab-panel bg-inverse-surface text-inverse-on-surface rounded-xl shadow-level-2 overflow-hidden">
+<div class="h-44 bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[72px]">plumbing</span>
+</div>
+<div class="p-8">
+<h3 class="font-headline-sm text-headline-sm mb-3">Radiators, Boiler Swaps &amp; Repairs</h3>
+<p class="text-surface-variant mb-6">Book common jobs such as radiator changes, boiler swaps, leaking pipework, blocked drains, and servicing.</p>
+<a class="inline-flex bg-primary-fixed text-on-primary-fixed px-6 py-3 rounded-lg font-label-bold" href="#contact">Book General Work</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Plans -->
+<section id="pricing" class="py-section-padding bg-background">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+<div>
+<span class="font-label-bold text-primary uppercase tracking-widest">Cashless subscriptions</span>
+<h2 class="font-headline-md text-headline-md mt-3">GoCardless service plans</h2>
+</div>
+<p class="font-body-md text-secondary max-w-xl">Monthly care plans for customers who prefer predictable maintenance and cashless payments.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2">Basic Care</h3>
+<p class="text-primary font-display-lg text-4xl mb-4">£12</p>
+<p class="text-secondary">Annual reminder, priority booking window, and digital service record.</p>
+</div>
+<div class="bg-primary-container text-on-primary rounded-xl p-8 shadow-level-3">
+<h3 class="font-headline-sm text-headline-sm mb-2">Heating Care</h3>
+<p class="font-display-lg text-4xl mb-4">£19</p>
+<p class="opacity-90">Boiler service, radiator checks, and reduced emergency call-out rates.</p>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<h3 class="font-headline-sm text-headline-sm mb-2">Renovation Support</h3>
+<p class="text-primary font-display-lg text-4xl mb-4">Quote</p>
+<p class="text-secondary">Planned payment schedule for bathrooms and larger installation work.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section id="contact" class="py-section-padding bg-primary-container text-on-primary">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center">
+<h2 class="font-display-lg text-headline-md md:text-display-lg mb-6">Ready for a warmer home?</h2>
+<p class="font-body-lg text-body-lg mb-10 max-w-2xl mx-auto opacity-90">Book your free, no-obligation heating survey today and discover how much you could save on energy bills.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="bg-inverse-surface text-on-primary px-10 py-5 rounded-lg font-label-bold text-body-lg hover:bg-black transition-all shadow-level-2" href="mailto:info@v2servicesltd.co.uk">
+                        Request a Quote Now
+                    </a>
+<a class="bg-white text-primary-container px-10 py-5 rounded-lg font-label-bold text-body-lg hover:bg-surface-container-lowest transition-all shadow-level-2" href="#pricing">
+                        View Pricing Guide
+                    </a>
+</div>
+</div>
+</section>
+<!-- FAQ Strip -->
+<section class="py-section-padding bg-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<div class="grid md:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+<div>
+<span class="font-label-bold text-primary uppercase tracking-widest">Useful to know</span>
+<h2 class="font-headline-md text-headline-md mt-3">Common questions before booking</h2>
+</div>
+<div class="grid gap-4">
+<details class="group bg-surface-container-low border border-outline-variant rounded-xl p-6" open>
+<summary class="font-label-bold cursor-pointer list-none flex justify-between gap-4">Do you handle bathroom renovation plumbing?<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span></summary>
+<p class="text-secondary mt-4">Yes. We support first fix and second fix plumbing, shower upgrades, heated towel rails, and suite replacement.</p>
+</details>
+<details class="group bg-surface-container-low border border-outline-variant rounded-xl p-6">
+<summary class="font-label-bold cursor-pointer list-none flex justify-between gap-4">Can I book smaller plumbing jobs?<span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span></summary>
+<p class="text-secondary mt-4">Yes. Radiator changes, boiler swaps, taps, toilets, leaks, and general repairs can all be booked through the enquiry route.</p>
+</details>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Section -->
+<footer class="w-full py-section-padding bg-inverse-surface dark:bg-surface-container-lowest footer-readable">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-12">
+<div class="md:w-1/3">
+<span class="font-headline-md text-headline-md text-primary-fixed mb-6 block">V2 Services LTD</span>
+<p class="font-body-md text-body-md footer-muted mb-6">Premier plumbing and heating solutions for UK homeowners. We combine traditional values with modern technology to deliver excellence.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed hover:bg-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed hover:bg-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed hover:bg-primary-container transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">alternate_email</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 md:w-1/3">
+<div>
+<h4 class="font-label-bold text-primary-fixed mb-4">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#services">Boilers</a></li>
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#services">Emergency</a></li>
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#pricing">Maintenance</a></li>
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#services">Smart Home</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-primary-fixed mb-4">Company</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#services">About Us</a></li>
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#reviews">Reviews</a></li>
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#contact">Contact</a></li>
+<li><a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#contact">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="md:w-1/4">
+<h4 class="font-label-bold text-primary-fixed mb-4">Contact Info</h4>
+<div class="space-y-4 footer-muted">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container">location_on</span>
+<p class="font-body-md text-body-md">123 High Street, Richmond<br/>London, UK TW9 1PR</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">phone</span>
+<p class="font-body-md text-body-md"><a href="tel:07950285553">07950 285553</a></p>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<p class="font-body-md text-body-md"><a href="mailto:info@v2servicesltd.co.uk">info@v2servicesltd.co.uk</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md footer-muted">© 2024 V2 Services LTD Plumbing &amp; Heating. Gas Safe Registered. Company number: 17166941.</p>
+<div class="flex gap-6">
+<a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md footer-muted hover:text-primary-fixed transition-colors hover:underline" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<script>
+    document.querySelectorAll('main section').forEach((section) => {
+        section.classList.add('reveal');
+    });
+
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.14 });
+
+        document.querySelectorAll('.reveal').forEach((section) => revealObserver.observe(section));
+    } else {
+        document.querySelectorAll('.reveal').forEach((section) => section.classList.add('is-visible'));
+    }
+
+    const tabButtons = document.querySelectorAll('[data-tab-target]');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach((item) => item.classList.remove('is-active'));
+            tabPanels.forEach((panel) => panel.classList.remove('is-active'));
+            button.classList.add('is-active');
+            document.getElementById(button.dataset.tabTarget)?.classList.add('is-active');
+        });
+    });
+</script>
+</body></html>

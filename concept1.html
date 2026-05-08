@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html class="light scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+<title>V2 Services LTD | Plumbing &amp; Heating Services</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary": "#FF6B00",
+                "on-primary": "#ffffff",
+                "primary-container": "#FF6B00",
+                "on-primary-container": "#ffffff",
+                "surface": "#ffffff",
+                "background": "#fcfcfc",
+                "on-background": "#1a1a1a",
+                "on-surface": "#1a1a1a",
+                "on-surface-variant": "#4a4a4a",
+                "outline": "#e5e5e5",
+                "surface-container": "#f8f9fa",
+                "surface-container-low": "#f1f3f5",
+                "surface-container-high": "#e9ecef"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "md": "16px",
+                "container-max": "1200px",
+                "sm": "8px",
+                "unit": "8px",
+                "xs": "4px",
+                "lg": "24px",
+                "xl": "40px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "label-md": ["Montserrat"],
+                "display-lg": ["Montserrat"],
+                "body-lg": ["Montserrat"],
+                "headline-lg": ["Montserrat"],
+                "headline-md": ["Montserrat"],
+                "body-md": ["Montserrat"]
+            },
+            "fontSize": {
+                "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Montserrat', sans-serif; }
+        section { scroll-margin-top: 88px; }
+        .btn-base {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 32px;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 16px;
+            min-width: 180px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tab-panel {
+            display: none;
+        }
+        .tab-panel.is-active {
+            display: block;
+        }
+        .tab-button.is-active {
+            background: #FF6B00;
+            color: #ffffff;
+            box-shadow: 0 12px 30px rgba(255, 107, 0, 0.18);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    
+        img, input, select, textarea, button, a { max-width: 100%; }
+         (max-width: 640px) {
+            .font-display-lg, .font-h1 { font-size: 34px !important; line-height: 1.12 !important; }
+            .font-headline-md, .font-h2 { font-size: 28px !important; line-height: 1.2 !important; }
+            section { overflow-x: clip; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<header class="bg-white/95 backdrop-blur-md font-label-md text-label-md top-0 z-50 sticky border-b border-outline">
+<nav class="flex justify-between items-center w-full px-lg py-md max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<img alt="V2 Services LTD logo" class="h-8 w-auto" src="v2-logo.svg"/>
+<span class="font-headline-md text-xl font-extrabold text-on-surface tracking-tight">V2 Services LTD</span>
+</div>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-primary font-bold border-b-2 border-primary" href="#services">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#projects">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#about">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#pricing">Plans</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-md">
+<a class="bg-primary text-on-primary px-lg py-sm rounded-lg font-bold hover:opacity-90 transition-all text-sm" href="#contact">Request Quote</a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</header>
+<main>
+<!-- Section 1: Hero -->
+<section class="relative w-full min-h-[70vh] flex items-center overflow-hidden bg-white">
+<div class="absolute inset-0 z-0">
+<img alt="Industrial boiler installation" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpggRp_oSMrUfhw3o99ilcBbHsU3s_C_4BYOF53lJfyeQpZjx7QjD-Ay-5eruYHApP8dT4zWodpl3iethPsJJ8VoAQsuIEAUVKassy572DTuMmzCEu5e3sNcLe7a9OFiCtdUtw5kZJyH5uruqaAe5caYyjckHGAFyi-BUwvzbM9X60UO9cxJTtMMVYytd070D8RseR7-yClo8UbM8xl-kMRip-6gf1NJBullCJaF83WydN9SsMSfRNaqkfSMhfWa6B9zalV0Ct1lhA"/>
+<div class="absolute inset-0 bg-white/80 md:bg-gradient-to-r md:from-white md:via-white/90 md:to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-lg w-full">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded mb-4 uppercase tracking-widest">Premium Trade Services</span>
+<h1 class="font-display-lg text-4xl md:text-5xl lg:text-6xl text-on-surface mb-6 leading-tight">Expert Plumbing &amp; Heating Solutions for the UK</h1>
+<p class="font-body-lg text-lg text-on-surface-variant mb-10 leading-relaxed max-w-xl">Delivering high-precision engineering and reliable maintenance for commercial and industrial facilities nationwide.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="btn-base bg-primary text-on-primary hover:shadow-lg" href="#contact">Book a Consultation</a>
+<a class="btn-base bg-white text-on-surface border-2 border-outline hover:border-primary hover:text-primary" href="#services">Our Services</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Trusted Partners -->
+<section class="py-12 bg-surface border-y border-outline">
+<div class="max-w-container-max mx-auto px-lg">
+<p class="text-center text-xs font-bold text-on-surface-variant mb-10 uppercase tracking-[0.2em]">Industry Accredited &amp; Certified</p>
+<div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-3xl">verified_user</span><span class="font-bold text-sm">GAS SAFE</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-3xl">shield</span><span class="font-bold text-sm">OFTEC</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-3xl">construction</span><span class="font-bold text-sm">CIPHE</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-3xl">check_circle</span><span class="font-bold text-sm">CHAS</span></div>
+<div class="flex items-center gap-2"><span class="material-symbols-outlined text-3xl">task_alt</span><span class="font-bold text-sm">SafeContractor</span></div>
+</div>
+</div>
+</section>
+<!-- Section 3: Core Services -->
+<section id="services" class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-4">Our Core Expertise</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Providing high-standard commercial heating and plumbing services designed for efficiency and long-term reliability.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Service Card 1 -->
+<div class="p-8 rounded-xl border border-outline hover:border-primary transition-all group bg-white">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface group-hover:text-primary">water_heater</span>
+</div>
+<h3 class="font-bold text-xl mb-3">Boiler Installation</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm leading-relaxed">High-efficiency heating systems designed for longevity and performance.</p>
+<a class="text-primary text-sm font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Service Card 2 -->
+<div class="p-8 rounded-xl border border-outline hover:border-primary transition-all group bg-white">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface group-hover:text-primary">hvac</span>
+</div>
+<h3 class="font-bold text-xl mb-3">HVAC Maintenance</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm leading-relaxed">Proactive care to ensure your systems operate at peak efficiency year-round.</p>
+<a class="text-primary text-sm font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Service Card 3 -->
+<div class="p-8 rounded-xl border border-outline hover:border-primary transition-all group bg-white">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface group-hover:text-primary">apartment</span>
+</div>
+<h3 class="font-bold text-xl mb-3">Commercial Plumbing</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm leading-relaxed">Full-scale plumbing infrastructure projects for large-scale facilities.</p>
+<a class="text-primary text-sm font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+<!-- Service Card 4 -->
+<div class="p-8 rounded-xl border border-outline hover:border-primary transition-all group bg-white">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-on-surface group-hover:text-primary">emergency_home</span>
+</div>
+<h3 class="font-bold text-xl mb-3">Emergency Repairs</h3>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm leading-relaxed">Rapid response services to minimize downtime and prevent damage.</p>
+<a class="text-primary text-sm font-bold inline-flex items-center gap-2 group-hover:gap-3 transition-all" href="#">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: About -->
+<section id="about" class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex flex-col lg:flex-row items-center gap-16">
+<div class="flex-1 relative">
+<img alt="Our engineering team" class="rounded-xl shadow-sm w-full h-[450px] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwg37SZO_zTMfa25cK0ee-3i2-KBjdV1kSaKWjrj0tDvOAp5CkFfiVV3G3-50STchGdKgVvzN65yvR2SwHKjkPoWwBljm8UNtiwp0JXYFu82ffnKsOmA5NR_9e2Plr20OkOgCqADvCrjqSV6gLfbns1tAEFu93WHzf_QdLWUHIAepxV2k8wo3SpowqVCiaJQ6TpA7bqVr7D3oslxkVAT7pglBVmaiu0JCSU3nEx9kBwMMPUvVCR92RFMuX8FGmw7EuZyX7oSm9GEyV"/>
+<div class="absolute -bottom-8 -right-8 bg-primary text-white p-8 rounded-lg shadow-xl hidden md:block">
+<p class="text-3xl font-extrabold">20+ Years</p>
+<p class="text-sm opacity-90 font-medium">Industry Excellence</p>
+</div>
+</div>
+<div class="flex-1 space-y-8">
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface leading-tight">Quality &amp; Safety First: Our Commitment to Excellence</h2>
+<p class="font-body-lg text-on-surface-variant leading-relaxed">At V2 Services LTD, we don't just fix pipes; we engineer reliability. Founded on the principles of technical precision and unwavering safety, we've become a trusted partner for industrial sites across the United Kingdom.</p>
+<div class="space-y-4">
+<div class="flex gap-4 items-center">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-sm font-bold">done</span>
+</div>
+<p class="font-bold text-on-surface">Rigorous Regulatory Standards</p>
+</div>
+<div class="flex gap-4 items-center">
+<div class="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-sm font-bold">done</span>
+</div>
+<p class="font-bold text-on-surface">Advanced Project Management</p>
+</div>
+</div>
+<a class="btn-base bg-primary text-on-primary" href="#contact">Speak to Our Team</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Key Benefits -->
+<section class="py-24 bg-white border-b border-outline">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<h4 class="font-bold text-lg mb-2">24/7 Support</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Round-the-clock emergency response for mission-critical failures.</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">badge</span>
+<h4 class="font-bold text-lg mb-2">Certified Experts</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Fully qualified engineers with specialized industrial experience.</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">history</span>
+<h4 class="font-bold text-lg mb-2">Fast Turnaround</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Efficient scheduling to minimize your operational downtime.</p>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined text-4xl text-primary mb-4" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<h4 class="font-bold text-lg mb-2">Guaranteed Work</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed px-4">Comprehensive warranties on all parts and craftsmanship.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Project Gallery -->
+<section id="projects" class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-4">
+<div>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-2">Recent Industrial Works</h2>
+<p class="font-body-md text-on-surface-variant">Showcasing our technical reach across various UK sectors.</p>
+</div>
+<a class="text-primary font-bold inline-flex items-center gap-2 group" href="#contact">Discuss a Similar Project <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">east</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group relative overflow-hidden rounded-xl h-[400px]">
+<img alt="Commercial HVAC project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_3sC4T2yglIWSQjpeJ857DLZM74sNGfEFp3dGsIjkbJYRLMpjguLkp7Wl4yPFuP27KcrVjRNB6CM9tQ2zPVdM1Zab-1eN_uD5jMVAPek8IAU8DxkIQW2Lkiaxf_4V9TLeNXNO2OOGPnCXL9dkRCciXtEzczrsNNxtS51iSeUOqXcuIxCAPJH0BggF5usLi8iNdTYYtDUSl_Qwgx6fNRPbZqwkcaN8SWrvBy8DJU4GAoeWbxScS67kzkZAlU3WZvPe-DrJ0fYN_JMZ"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+<span class="text-primary font-bold text-xs uppercase tracking-wider mb-2">Commercial HVAC</span>
+<h3 class="text-white font-bold text-2xl">Tech Park Automation</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl h-[400px]">
+<img alt="Industrial plumbing project" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkHJc3gW8a7aornSL5E3n4O5EALGOF23dpKdbe_PxhDmQQIAGCVLi8m2HcmeS8Fmlc3ltB5jOiJJSGfqlKrKvuJ_OU__jOGDojB9xyoynW710IcNkdyqpvXt-NGTwPTFzg409f215eu3RCyEfraYfV0UlvhcuQy84xoiSc0zocG9Q4F9zitbdUEqWpG8LJbGCc2lBSbDjpHdBQp-rWklklkVrcGfWtRbHBHMBdx5JKqwpaRrxJVMVhvSLfk06dxYUxzomoPh70a1up"/>
+<div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-8">
+<span class="text-primary font-bold text-xs uppercase tracking-wider mb-2">Industrial Plumbing</span>
+<h3 class="text-white font-bold text-2xl">Global Steel Facility</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Service Tabs & Pricing Plans -->
+<section id="pricing" class="py-24 bg-surface-container-low border-y border-outline">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-12">
+<div class="max-w-2xl">
+<span class="inline-block text-primary font-bold text-xs uppercase tracking-[0.2em] mb-3">Pricing plans and service routes</span>
+<h2 class="font-headline-lg text-3xl md:text-4xl text-on-surface mb-4">Choose the work type, then compare the care plans</h2>
+<p class="font-body-md text-on-surface-variant">Switch between bathroom renovations and general plumbing jobs, then pick a cashless plan or request a custom quote.</p>
+</div>
+<div class="inline-flex p-1 bg-white border border-outline rounded-lg shadow-sm">
+<button class="tab-button is-active px-5 py-3 rounded-md text-on-surface-variant font-bold text-sm transition-all" data-tab-target="bathroom-concept1" type="button">Bathrooms</button>
+<button class="tab-button px-5 py-3 rounded-md text-on-surface-variant font-bold text-sm hover:text-primary transition-all" data-tab-target="general-concept1" type="button">Plumbing Jobs</button>
+</div>
+</div>
+<div class="mb-12">
+<div id="bathroom-concept1" class="tab-panel is-active bg-white border border-outline rounded-xl p-8">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">bathroom</span>
+<h3 class="text-2xl font-bold mb-3">Bathroom Renovations</h3>
+<p class="text-on-surface-variant mb-6">Survey-led bathroom refurbishments covering pipework, suites, showers, tiling coordination, and heating upgrades.</p>
+<ul class="grid md:grid-cols-3 gap-3 text-sm font-semibold text-on-surface-variant">
+<li>Full bathroom refits and en-suites</li>
+<li>Shower, bath, basin, and WC replacement</li>
+<li>Towel radiators and concealed pipework</li>
+</ul>
+</div>
+<div id="general-concept1" class="tab-panel bg-white border border-outline rounded-xl p-8">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">plumbing</span>
+<h3 class="text-2xl font-bold mb-3">General Plumbing &amp; Heating</h3>
+<p class="text-on-surface-variant mb-6">Fast, tidy support for everyday jobs and upgrades, from radiator changes through to efficient boiler swaps.</p>
+<ul class="grid md:grid-cols-3 gap-3 text-sm font-semibold text-on-surface-variant">
+<li>Radiator changes and valve upgrades</li>
+<li>Boiler swaps, servicing, and repairs</li>
+<li>Leaks, blockages, taps, and pipework</li>
+</ul>
+</div>
+</div>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="bg-white border border-outline rounded-xl p-6">
+<p class="text-xs font-bold uppercase text-primary mb-2">GoCardless Plan</p>
+<h3 class="text-xl font-extrabold mb-2">Home Care</h3>
+<p class="text-3xl font-extrabold mb-4">From £12/mo</p>
+<p class="text-sm text-on-surface-variant">Annual boiler reminder, priority booking, and reduced call-out rates.</p>
+</div>
+<div class="bg-primary text-white rounded-xl p-6 shadow-lg">
+<p class="text-xs font-bold uppercase opacity-80 mb-2">Most Popular</p>
+<h3 class="text-xl font-extrabold mb-2">Heating Plus</h3>
+<p class="text-3xl font-extrabold mb-4">From £19/mo</p>
+<p class="text-sm opacity-90">Boiler service, heating health check, radiator balancing, and priority support.</p>
+</div>
+<div class="bg-white border border-outline rounded-xl p-6">
+<p class="text-xs font-bold uppercase text-primary mb-2">Project Support</p>
+<h3 class="text-xl font-extrabold mb-2">Renovation Care</h3>
+<p class="text-3xl font-extrabold mb-4">Custom</p>
+<p class="text-sm text-on-surface-variant">Staged payments for bathroom refurbishments and larger planned works.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Testimonial -->
+<section class="py-24 bg-surface-container">
+<div class="max-w-4xl mx-auto px-lg text-center">
+<span class="material-symbols-outlined text-primary/20 text-7xl mb-8">format_quote</span>
+<blockquote class="text-2xl md:text-3xl font-medium text-on-surface mb-10 leading-relaxed italic">
+                "V2 Services LTD delivered our plant room refit ahead of schedule and with a level of professionalism that is rare in the trade. Their attention to detail is unmatched."
+            </blockquote>
+<div>
+<p class="font-bold text-lg">James Aristhor</p>
+<p class="text-on-surface-variant text-sm font-semibold uppercase tracking-wider">Operations Director, Horizon Logistics UK</p>
+</div>
+</div>
+</section>
+<!-- Section 9: Lead Form -->
+<section id="contact" class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="flex flex-col lg:flex-row bg-white border border-outline rounded-2xl overflow-hidden shadow-sm">
+<div class="flex-1 p-12 lg:p-16 bg-primary text-white">
+<h2 class="text-3xl md:text-4xl font-extrabold mb-8">Ready to Start Your Project?</h2>
+<p class="text-lg opacity-90 mb-12 leading-relaxed">Book a site survey today. Our senior engineers are ready to assess your requirements and provide a detailed, no-obligation quote.</p>
+<div class="space-y-8">
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-3xl">call</span>
+<div>
+<p class="text-xs uppercase font-bold opacity-80 mb-1">Call Our Team</p>
+<p class="text-xl font-bold"><a href="tel:07950285553">07950 285553</a></p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined text-3xl">mail</span>
+<div>
+<p class="text-xs uppercase font-bold opacity-80 mb-1">Email Us</p>
+<p class="text-xl font-bold"><a href="mailto:info@v2servicesltd.co.uk">info@v2servicesltd.co.uk</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 p-12 lg:p-16">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Full Name</label>
+<input class="w-full border-outline border rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none" placeholder="e.g. John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Company</label>
+<input class="w-full border-outline border rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Your Business" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Service Required</label>
+<select class="w-full border-outline border rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none appearance-none bg-white">
+<option>Boiler Installation</option>
+<option>Bathroom Renovation</option>
+<option>Radiator Changes</option>
+<option>Boiler Swap</option>
+<option>HVAC Maintenance</option>
+<option>Industrial Plumbing</option>
+<option>GoCardless Service Plan</option>
+<option>Emergency Request</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase text-on-surface-variant">Project Details</label>
+<textarea class="w-full border-outline border rounded-lg p-3 focus:border-primary focus:ring-0 transition-all outline-none" placeholder="Tell us what you need, your address area, and preferred contact time..." rows="4"></textarea>
+</div>
+<button class="btn-base w-full bg-primary text-on-primary shadow-lg hover:opacity-90">Submit Request</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface border-t border-outline py-16">
+<div class="max-w-container-max mx-auto px-lg w-full">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+<div class="space-y-6">
+<div class="flex items-center gap-2">
+<img alt="V2 Services LTD logo" class="h-6 w-auto" src="v2-logo.svg"/>
+<span class="font-bold text-xl text-on-surface tracking-tight">V2 Services LTD</span>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Authoritative, efficient, and clean plumbing and heating solutions for homes, landlords, and commercial sites.</p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Company</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Our Engineers</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Services</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Plant Room Refits</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Commercial Heating</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Safety Audits</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Legal</h4>
+<ul class="space-y-4 text-sm font-medium">
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all" href="#">Certifications</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Contact</h4>
+<ul class="space-y-4 text-sm font-medium text-on-surface-variant">
+<li><a class="hover:text-primary transition-all" href="tel:07950285553">07950 285553</a></li>
+<li><a class="hover:text-primary transition-all" href="mailto:info@v2servicesltd.co.uk">info@v2servicesltd.co.uk</a></li>
+<li>Company number: 17166941</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-semibold text-on-surface-variant uppercase tracking-wider">
+<p>© 2024 V2 Services LTD Plumbing &amp; Heating. Gas Safe Registered. Company number: 17166941.</p>
+<div class="flex items-center gap-8">
+<span>Verified Contractor</span>
+<span>Secure Transactions</span>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile FAB -->
+<a class="md:hidden fixed bottom-6 right-6 bg-primary text-on-primary w-14 h-14 rounded-full shadow-xl z-50 flex items-center justify-center" href="tel:07950285553">
+<span class="material-symbols-outlined">add_call</span>
+</a>
+<script>
+    document.querySelectorAll('main section').forEach((section) => {
+        section.classList.add('reveal');
+    });
+
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.14 });
+
+        document.querySelectorAll('.reveal').forEach((section) => revealObserver.observe(section));
+    } else {
+        document.querySelectorAll('.reveal').forEach((section) => section.classList.add('is-visible'));
+    }
+
+    const tabButtons = document.querySelectorAll('[data-tab-target]');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            tabButtons.forEach((item) => item.classList.remove('is-active'));
+            tabPanels.forEach((panel) => panel.classList.remove('is-active'));
+            button.classList.add('is-active');
+            document.getElementById(button.dataset.tabTarget)?.classList.add('is-active');
+        });
+    });
+</script>
+</body></html>

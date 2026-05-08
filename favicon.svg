@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="V2 Services LTD favicon">
+  <rect width="64" height="64" rx="8" fill="#f45108"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round">
+    <path d="M12 28h40M12 38h40" stroke-width="3"/>
+    <path d="M16 27a16 16 0 0 1 32 0M16 39a16 16 0 0 0 32 0" stroke-width="3"/>
+  </g>
+  <path d="M32 14 39 25H25Z" fill="#fff"/>
+  <text x="32" y="39" text-anchor="middle" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="800">V2</text>
+</svg>

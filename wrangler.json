@@ -1,0 +1,9 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "v2-concepts",
+  "compatibility_date": "2026-02-11",
+  "main": "worker.js",
+  "assets": {
+    "directory": "."
+  }
+}

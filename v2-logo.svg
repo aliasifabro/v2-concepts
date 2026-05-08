@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 960" role="img" aria-labelledby="title desc">
+  <title id="title">V2 Services LTD logo</title>
+  <desc id="desc">Orange V2 Services LTD emblem with white circular linework.</desc>
+  <rect width="1200" height="960" fill="#f45108"/>
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M288 382a326 326 0 0 1 624 0" stroke-width="8"/>
+    <path d="M310 382a300 300 0 0 1 580 0" stroke-width="8"/>
+    <path d="M288 528a326 326 0 0 0 624 0" stroke-width="8"/>
+    <path d="M310 528a300 300 0 0 0 580 0" stroke-width="8"/>
+    <path d="M230 396h740" stroke-width="8"/>
+    <path d="M230 526h740" stroke-width="8"/>
+    <path d="M405 386a210 210 0 0 1 390 0" stroke-width="32"/>
+    <path d="M405 540a210 210 0 0 0 390 0" stroke-width="32"/>
+    <path d="M505 540a105 105 0 0 0 190 0" stroke-width="32"/>
+  </g>
+  <path d="M600 286 662 374H538Z" fill="#fff"/>
+  <text x="600" y="512" text-anchor="middle" fill="#fff" font-family="Montserrat, Arial, sans-serif" font-size="128" font-weight="800">V2</text>
+  <path id="arc" d="M405 652a230 230 0 0 0 390 0" fill="none"/>
+  <text fill="#fff" font-family="Montserrat, Arial, sans-serif" font-size="44" font-weight="600" letter-spacing="16">
+    <textPath href="#arc" startOffset="50%" text-anchor="middle">SERVICES LTD</textPath>
+  </text>
+</svg>
